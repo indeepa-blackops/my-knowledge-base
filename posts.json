@@ -4,7 +4,21 @@
     "type": "infographic",
     "date": "2025-04-13",
     "desc": "Why some people are instantly likable — and it has nothing to do with confidence",
-    "tags": ["psychology", "social science"],
+    "tags": [
+      "psychology",
+      "social science"
+    ],
     "file": "likability_blog_post.html"
+  },
+  {
+    "title": "James Clear's 3-2-1: balance, generosity, and purpose by season",
+    "type": "infographic",
+    "date": "2026-03-19",
+    "desc": "Three ideas, two quotes, one question — distilled from James Clear's March 19, 2026 newsletter edition.",
+    "tags": [
+      "self-improvement",
+      "newsletter"
+    ],
+    "file": "james-clear-321.html"
   }
 ]
