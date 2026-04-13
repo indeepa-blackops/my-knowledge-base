@@ -1,26 +1,10 @@
 [
   {
-    "title": "How CRISPR actually works",
-    "type": "summary",
-    "date": "2025-04-10",
-    "desc": "Breaking down gene editing from a Kurzgesagt video — what it is, how it's done, and what's next.",
-    "tags": ["biology", "science"],
-    "file": "crispr-summary.html"
-  },
-  {
-    "title": "The entire history of AI",
+    "title": "Why some people are instantly likable",
     "type": "infographic",
-    "date": "2025-04-08",
-    "desc": "Visual timeline from Turing to GPT-4. Built from a 3Blue1Brown breakdown.",
-    "tags": ["AI", "history"],
-    "file": "ai-history.html"
-  },
-  {
-    "title": "How sleep works",
-    "type": "mindmap",
-    "date": "2025-04-05",
-    "desc": "Stages of sleep, circadian rhythm, memory consolidation — mapped out from a Huberman Lab video.",
-    "tags": ["health", "neuroscience"],
-    "file": "sleep-mindmap.html"
+    "date": "2025-04-13",
+    "desc": "Why some people are instantly likable — and it has nothing to do with confidence",
+    "tags": ["psychology", "social science"],
+    "file": "likability_blog_post.html"
   }
 ]
