@@ -20,5 +20,16 @@
       "newsletter"
     ],
     "file": "james-clear-321.html"
+  },
+  {
+    "title": "The spotlight effect: you're not as noticed as you think",
+    "type": "infographic",
+    "date": "2026-04-13",
+    "desc": "A breakdown of the cognitive bias that makes you feel watched — what causes it, the research behind it, and three ways to overcome it.",
+    "tags": [
+      "psychology",
+      "cognitive-bias"
+    ],
+    "file": "spotlight-effect.html"
   }
 ]
