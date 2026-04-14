@@ -42,5 +42,16 @@
       "newsletter"
     ],
     "file": "james-clear-3ideas.html"
+  },
+  {
+   "title": "Why some people are instantly likable",
+   "type": "infographic",
+   "date": "2026-04-14",
+   "desc": "Likability isn't a fixed personality trait, it's a set of subtle signals. Learn why projecting warmth, assuming others already like you, and dropping your social armor makes you instantly likable.",
+   "tags": [
+     "psychology",
+     "social dynamics"
+    ],
+   "file": "2026-04.14-likability.html"
   }
 ]
