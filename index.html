@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'system';
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (savedTheme === 'system' && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Knowledge Base</title>
@@ -19,22 +26,20 @@
       --radius-lg: 12px;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1c1c1a;
-        --bg-secondary: #2a2a28;
-        --text: #f0ede8;
-        --text-secondary: #9a9892;
-        --text-tertiary: #6a6866;
-        --border: rgba(255,255,255,0.1);
-        --border-hover: rgba(255,255,255,0.2);
-      }
-      .badge-summary { background: #0c447c !important; color: #b5d4f4 !important; }
-      .badge-infographic { background: #3c3489 !important; color: #cecbf6 !important; }
-      .badge-mindmap { background: #085041 !important; color: #9fe1cb !important; }
-      .badge-notes { background: #633806 !important; color: #fac775 !important; }
-      .tag { background: #2a2a28 !important; color: #9a9892 !important; }
+    [data-theme="dark"] {
+      --bg: #1c1c1a;
+      --bg-secondary: #2a2a28;
+      --text: #f0ede8;
+      --text-secondary: #9a9892;
+      --text-tertiary: #6a6866;
+      --border: rgba(255,255,255,0.1);
+      --border-hover: rgba(255,255,255,0.2);
     }
+    [data-theme="dark"] .badge-summary { background: #0c447c !important; color: #b5d4f4 !important; }
+    [data-theme="dark"] .badge-infographic { background: #3c3489 !important; color: #cecbf6 !important; }
+    [data-theme="dark"] .badge-mindmap { background: #085041 !important; color: #9fe1cb !important; }
+    [data-theme="dark"] .badge-notes { background: #633806 !important; color: #fac775 !important; }
+    [data-theme="dark"] .tag { background: #2a2a28 !important; color: #9a9892 !important; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -162,7 +167,10 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>My knowledge base</h1>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>My knowledge base</h1>
+        <button id="theme-toggle" class="filter-btn" onclick="toggleTheme()" title="Toggle Day/Night Mode">🌙</button>
+      </div>
       <p>Summaries, infographics & mindmaps — all in one place</p>
     </div>
 
@@ -233,6 +241,20 @@
       return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
     }
 
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const toTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', toTheme);
+      localStorage.setItem('theme', toTheme);
+      updateThemeToggleIcon();
+    }
+
+    function updateThemeToggleIcon() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
+    }
+
+    updateThemeToggleIcon();
     loadPosts();
   </script>
 </body>

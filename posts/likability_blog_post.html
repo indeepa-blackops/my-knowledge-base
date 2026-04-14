@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script>
+  const savedTheme = localStorage.getItem('theme') || 'system';
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (savedTheme === 'dark' || (savedTheme === 'system' && prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why some people are instantly likable</title>
@@ -27,6 +35,35 @@
     --radius-lg: 12px;
     --radius-xl: 16px;
   }
+
+  [data-theme="dark"] {
+    --text-primary: #f0ede8;
+    --text-secondary: #9a9892;
+    --text-muted: #6a6866;
+    --bg-page: #1c1c1a;
+    --bg-card: #2a2a28;
+    --border: rgba(255,255,255,0.1);
+    --border-light: rgba(255,255,255,0.05);
+    
+    --bg-info: #0c447c;
+    --text-info: #b5d4f4;
+    --bg-amber: #633806;
+    --text-amber: #fac775;
+    --bg-teal: #085041;
+    --text-teal: #9fe1cb;
+    --bg-purple: #3c3489;
+    --text-purple: #cecbf6;
+    --bg-coral: #7a2205;
+    --text-coral: #f7a88d;
+    --bg-green: #234d02;
+    --text-green: #9edc66;
+    --bg-danger: #610d0d;
+    --text-danger: #f7a1a1;
+    --bg-success: #234d02;
+    --text-success: #9edc66;
+  }
+  [data-theme="dark"] img { opacity: 0.9; }
+
 
   body {
     background: var(--bg-page);
@@ -289,6 +326,11 @@
 <body>
 <div class="page-wrap">
 
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 14px; font-family: system-ui, sans-serif;">&larr; Back to Home</a>
+    <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Day/Night Mode" style="background:transparent; border:1px solid var(--border); border-radius:4px; font-size: 14px; cursor: pointer; padding: 4px 8px; color: var(--text-primary);">🌙</button>
+  </div>
+
   <span class="tag">Psychology · Social Science</span>
 
   <h1 class="title">Why some people are instantly likable — and it has nothing to do with confidence</h1>
@@ -395,5 +437,22 @@
   <div class="closing">Based on "The Real Reason Some People Are Instantly Likable" by Francesca Tighinean, Big Think.</div>
 
 </div>
+
+<script>
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const toTheme = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', toTheme);
+    localStorage.setItem('theme', toTheme);
+    updateThemeToggleIcon();
+  }
+
+  function updateThemeToggleIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const btn = document.getElementById('theme-toggle');
+    if(btn) btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateThemeToggleIcon();
+</script>
 </body>
 </html>
