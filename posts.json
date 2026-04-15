@@ -115,5 +115,21 @@
     "desc": "A brief framework for continuous growth featuring three original ideas for personal mastery, two quotes on clarity and control, and one powerful question to prompt reflection.",
     "tags": ["personal growth", "reputation", "clarity", "habits", "self-improvement"],
     "file": "2026-04-15-321-clarity-reputation-challenge.html"
+  },
+  {
+    "title": "James Clear’s 3-2-1: The Architecture of a Purposeful Life",
+    "type": "infographic",
+    "date": "2026-04-15",
+    "desc": "A distillation of James Clear’s insights exploring how the architecture of our daily lives—habits, trade-offs, and expectations—determines our potential.",
+    "tags": ["James Clear", "habits", "productivity", "personal growth", "intentionality"],
+    "file": "2026-04-15-321-architecture-purposeful-life.html"
+  },
+  {
+    "title": "The Deathbed Regret List: How to Write Your Own Ending",
+    "type": "infographic",
+    "date": "2026-04-15",
+    "desc": "Using inverse thinking and the 'Deathbed Regret List' framework to act with intention today across vitality, relationships, and presence.",
+    "tags": ["Sahil Bloom", "legacy", "inverse thinking", "life advice", "mental models"],
+    "file": "2026-04-15-deathbed-regret-list.html"
   } 
 ]
