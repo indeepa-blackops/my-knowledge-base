@@ -80,6 +80,20 @@
     }
     .search:focus { border-color: var(--border-hover); }
 
+    .date-filter {
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border-hover);
+      background: var(--bg);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .date-filter:focus { border-color: var(--border-hover); color: var(--text); }
+
     .filter-btn {
       font-size: 13px;
       padding: 5px 14px;
@@ -176,6 +190,9 @@
 
     <div class="controls">
       <input class="search" type="text" id="search" placeholder="Search..." oninput="render()" />
+      <select class="date-filter" id="date-filter" onchange="render()">
+        <option value="all">All months</option>
+      </select>
       <button class="filter-btn active" data-type="all"         onclick="setFilter('all')">All</button>
       <button class="filter-btn"        data-type="summary"     onclick="setFilter('summary')">Summaries</button>
       <button class="filter-btn"        data-type="infographic" onclick="setFilter('infographic')">Infographics</button>
@@ -193,7 +210,25 @@
     async function loadPosts() {
       const res = await fetch('posts.json');
       posts = await res.json();
+      populateDateFilter();
       render();
+    }
+
+    function populateDateFilter() {
+      // Collect unique YYYY-MM keys, sorted newest first
+      const monthSet = new Set(
+        posts.map(p => p.date.slice(0, 7))
+      );
+      const months = [...monthSet].sort((a, b) => b.localeCompare(a));
+      const sel = document.getElementById('date-filter');
+      months.forEach(ym => {
+        const [y, m] = ym.split('-');
+        const label = new Date(+y, +m - 1, 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+        const opt = document.createElement('option');
+        opt.value = ym;
+        opt.textContent = label;
+        sel.appendChild(opt);
+      });
     }
 
     function setFilter(type) {
@@ -206,13 +241,15 @@
 
     function render() {
       const q = document.getElementById('search').value.toLowerCase();
+      const dateVal = document.getElementById('date-filter').value;
       const filtered = posts.filter(p => {
         const matchType = activeFilter === 'all' || p.type === activeFilter;
+        const matchDate = dateVal === 'all' || p.date.startsWith(dateVal);
         const matchQ = !q ||
           p.title.toLowerCase().includes(q) ||
           p.desc.toLowerCase().includes(q) ||
           (p.tags || []).some(t => t.toLowerCase().includes(q));
-        return matchType && matchQ;
+        return matchType && matchDate && matchQ;
       });
 
       const grid = document.getElementById('grid');
