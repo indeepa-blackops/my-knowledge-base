@@ -53,5 +53,67 @@
      "social dynamics"
     ],
    "file": "2026-04.14-likability.html"
-  }
+  },
+  {
+   "title": "The Black Coffee Theory: Why Focusing on What You Don't Want Brings It Closer",
+   "type": "infographic",
+   "date": "2026-04-14",
+   "desc": "A visual breakdown of the Ironic Process Theory and the power of intention. Learn why fixating on avoidance backfires and how shifting your focus toward clear, positive goals shapes your reality.",
+   "tags": [
+     "psychology",
+     "mindset",
+     "cognitive bias",
+     "awareness"
+    ],
+   "file": "black-coffee-theory.html"
+  },
+  {
+   "title": "The 'Just Make the Coffee' Philosophy: Why Imperfect Action Beats Perfect Inertia",
+   "type": "infographic",
+   "date": "2026-04-14",
+   "desc": "Break decision paralysis with the power of imperfect action. Learn why small, flawed steps build momentum and reshape your mindset more effectively than waiting for the perfect moment.",
+   "tags": [
+     "psychology",
+     "productivity",
+     "mindset",
+     "habits"
+    ],
+   "file": "2026-04-14-just-make-the-coffee.html"
+  },
+  {
+   "title": "The Path to Excellence: Lessons from the Tom Brady Framework",
+   "type": "infographic",
+   "date": "2026-04-15",
+   "desc": "Excellence isn't a gift—it's a path forged through a rigorous, multi‑dimensional system. Learn the framework of effort, mastery, and resilience that turns consistent action into legendary results.",
+   "tags": [
+     "mindset",
+     "performance",
+     "psychology",
+     "habits",
+     "excellence"
+    ],
+   "file": "2026-04-15-tom-brady-framework.html"
+  },
+  {
+    "title": "The Resilience Paradox: When Grit Becomes Self‑Sabotage",
+    "type": "infographic",
+    "date": "2026-04-15",
+    "desc": "Discover the tipping point where endurance becomes a liability. Learn to shift from rigid grit to mindful resilience through five strategic pillars that protect your well‑being while sustaining long‑term impact.",
+    "tags": [
+      "psychology",
+      "resilience",
+      "mindset",
+      "wellbeing",
+      "performance"
+    ],
+    "file": "2026-04-15-resilience-paradox.html"
+  },
+  {
+    "title": "The 3-2-1 Newsletter: Clarity, Reputation, and the Power of the Challenge",
+    "type": "infographic",
+    "date": "2026-04-15",
+    "desc": "A brief framework for continuous growth featuring three original ideas for personal mastery, two quotes on clarity and control, and one powerful question to prompt reflection.",
+    "tags": ["personal growth", "reputation", "clarity", "habits", "self-improvement"],
+    "file": "2026-04-15-321-clarity-reputation-challenge.html"
+  } 
 ]
